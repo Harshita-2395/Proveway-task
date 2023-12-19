@@ -1,0 +1,202 @@
+body {
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: "Metropolis", sans-serif;
+    color: #000000;
+}
+
+.form-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 340px;
+    margin: 0 auto;
+}
+
+.form-heading {
+    position: relative;
+}
+
+.form-heading h2 {
+    font-weight: 500;
+    font-size: 18px;
+    color: #007F61;
+    text-align: center;
+}
+
+.form-heading:before, .form-heading:after {
+    content: '';
+    position: absolute;
+    border:0;
+    width: 94px;
+    border-bottom: 0.9px solid #C8C8C8;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-heading:before {
+    left: 0;
+}
+
+.form-heading:after {
+    right: 0;
+}
+
+.row {
+    border: 0.9px solid #C8C8C8;
+    border-radius: 3.62px;
+    padding: 20px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-25 {
+    float: left;
+    width: 40%;
+    margin-top: 6px;
+    text-align: right;
+}
+  
+.col-75 {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+    display: flex;
+    align-items: flex-start;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+p {
+    font-size: 12px;
+    font-family: 'inter', sans-serif;
+    font-weight: 600;
+    color: #007F61;
+    margin: 0;
+}
+
+.discounted {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.discounted span {
+    color: rgba(0, 0, 0, 0.3);
+    font-family: 'inter', sans-serif;
+    font-size: 10px;
+    margin: 0;
+    text-decoration: line-through;
+}
+
+.label-content {
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.bottom-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 20px;
+}
+
+.shipping-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #007F61;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.total-fig {
+    display: flex;
+    align-items: flex-start;
+}
+
+.total-fig h5, .total-fig h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+.add-btn {
+    display: block;
+    background-color: #007F61;
+    border-radius: 4px;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border-color: #007F61;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+table th, table td, select {
+    font-family: 'inter', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    padding: 3px 0 3px 3px;
+    text-align: left;
+}
+
+table th {
+    font-size: 10px;
+}
+
+table td {
+    font-size: 11px;
+}
+
+select {
+    background-color: white;
+    border-color: #D9D9D9;
+    border-radius: 2px;
+    min-width: 65px;
+}
+
+select:focus {
+    border-color: none;
+}
+
+p.copyright-text {
+    font-family: 'inter', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 12px;
+    color: #000000;
+    text-align: right;
+    margin: 10px 0;
+}
+
+input[type='radio'] {
+    accent-color: #007F61;
+    margin-right: 10px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+}
