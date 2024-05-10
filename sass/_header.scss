@@ -1,0 +1,335 @@
+.navbar {
+    position: relative;
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+        padding: px-to-rem(10) px-to-rem(15);
+
+        .navbar-brand {
+            color: $grey-1;
+            font-weight: 700;
+        }
+
+        .create-btn {
+            height: px-to-rem(48);
+            font-size: px-to-rem(16);
+        }
+    }
+
+    .offcanvas-btn {
+        margin-right: px-to-rem(20);
+        position: absolute;
+        top: 20px;
+        left: -40px;
+        z-index: 9999;
+        background: $secondary;
+        border: 1px solid $secondary;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: px-to-rem(32);
+        width: px-to-rem(32);
+        box-shadow: 0px 3px 6px #0000001f;
+
+        i {
+            color: $white;
+            font-size: px-to-rem(12);
+        }
+
+        .navbar-toggler-icon {
+            display: none;
+        }
+    }
+
+    .btn-close {
+        background: $secondary;
+        border: 1px solid $secondary;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        right: -8px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        height: px-to-rem(32);
+        width: px-to-rem(32);
+        box-shadow: 0px 3px 6px #0000001f;
+        padding: 0;
+        transition: 0.5 all ease-in-out;
+
+        &:hover,
+        &:focus {
+            background: $secondary;
+        }
+
+        i {
+            color: $white;
+            font-size: px-to-rem(12);
+        }
+    }
+
+    .offcanvas {
+        background: $secondary;
+        width: px-to-rem(240);
+        display: block;
+
+        .logo-icon {
+            display: none;
+        }
+
+        .logo-white {
+            display: block;
+        }
+
+        &:not(.show) {
+            visibility: visible !important;
+            transform: none !important;
+            width: 80px;
+
+            .logo-icon {
+                display: block;
+            }
+
+            .logo-white {
+                display: none;
+            }
+
+            .offcanvas-body {
+                .list-item {
+                    p {
+                        display: none;
+                    }
+                }
+
+                .img-wrapper {
+                    .num-count-circle {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                .num-count {
+                    display: none;
+                }
+            }
+
+            .offcanvas-footer {
+                .name-wrapper {
+                    display: none;
+                }
+
+                .dropdown-toggle {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .offcanvas-header {
+            padding: px-to-rem(20);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.21);
+
+            .logo-white-wrapper {
+                padding-left: px-to-rem(8);
+            }
+        }
+
+        .offcanvas-body {
+            position: relative;
+            padding: 0;
+
+            ul {
+                padding: 0;
+                margin: 0;
+
+                li {
+                    list-style-type: none;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                        padding: px-to-rem(5) px-to-rem(10);
+
+                        &:hover {
+                            background-color: $blue-1;
+                        }
+
+                        &:focus {
+                            background-color: $primary;
+                            border-left: 2px solid $white;
+                        }
+                    }
+
+                    .img-wrapper {
+                        position: relative;
+
+                        .num-count-circle {
+                            display: none;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            background-color: $red-1;
+                            border-radius: 50%;
+                            color: $white;
+                            font-size: px-to-rem(14);
+                            height: px-to-rem(20);
+                            width: px-to-rem(20);
+                            font-size: px-to-rem(10);
+                        }
+                    }
+
+                    p {
+                        color: $white;
+                        margin-bottom: 0;
+                        font-size: px-to-rem(15);
+
+                        .num-count {
+                            background-color: $red-1;
+                            border-radius: px-to-rem(14);
+                            color: $white;
+                            font-size: px-to-rem(14);
+                            padding: px-to-rem(1.5) px-to-rem(11);
+                            margin-left: px-to-rem(10);
+                        }
+                    }
+
+                    .icon.i-7 {
+                        padding: px-to-rem(10);
+                    }
+                }
+            }
+        }
+
+        .offcanvas-footer {
+            background-color: $blue-2;
+
+            .user-info {
+                position: absolute;
+                bottom: 0;
+                background-color: $blue-2;
+                width: 100%;
+
+                .dropdown-toggle {
+                    width: 100%;
+                    display: flex;
+                    align-items: flex-start;
+                    padding-top: px-to-rem(15);
+                    padding-bottom: px-to-rem(15);
+
+                    &:after {
+                        color: $white;
+                        top: 8px;
+                        position: relative;
+                    }
+                }
+
+                .dropdown-menu {
+                    top: -80px;
+                    right: 0;
+                    left: auto;
+                    margin-top: 0.125rem;
+                }
+
+                .sname {
+                    background-color: $orange;
+                    height: px-to-rem(40);
+                    width: px-to-rem(40);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: px-to-rem(50);
+
+                    h4 {
+                        color: $white;
+                        margin-bottom: 0;
+                        font-size: px-to-rem(18);
+                        text-transform: uppercase;
+                        font-weight: 400;
+                    }
+                }
+
+                .name-wrapper {
+                    text-align: left;
+                    margin: 0 px-to-rem(8);
+
+                    .username {
+                        font-size: px-to-rem(16);
+                        color: $white;
+                        font-weight: 400;
+                        margin-bottom: 0;
+                    }
+
+                    p {
+                        color: $grey-4;
+                        font-size: px-to-rem(14);
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    .navbar {
+        display: block !important;
+        background-color: $secondary;
+        padding: 0;
+        margin-bottom: px-to-rem(10);
+
+        .container-fluid {
+            justify-content: flex-start;
+        }
+
+        .header-content {
+            margin-left: px-to-rem(30);
+            a.navbar-brand {
+                color: $white;
+            }
+
+            .create-btn {
+                display: none;
+            }
+        }
+
+        .offcanvas {
+            height: 100vh;
+            overflow-y: scroll;
+            display: block;
+
+            &:not(.show) {
+                visibility: hidden !important;
+                transform: inherit !important;
+                width: 0;
+            }
+        }
+
+        .offcanvas-btn {
+            position: inherit;
+            box-shadow: none;
+
+            .navbar-toggler-icon {
+                filter: invert(1);
+                display: block;
+            }
+
+            i {
+                display: none;
+            }
+        }
+    }
+
+    .sidebar {
+        display: none;
+    }
+}

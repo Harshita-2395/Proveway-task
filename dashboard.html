@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/2.0.2/css/select.dataTables.css">
+    <link rel="stylesheet" href="./sass/styles.css">
+
+</head>
+
+<body>
+    <div class="main-content" id="mainContent">
+        <header>
+            <nav class="navbar navbar-light d-block">
+                <div class="container-fluid">
+                    <button class="navbar-toggler offcanvas-btn p-0 m-0" id="offcanvasBtn" type="button"
+                        data-bs-toggle="offcanvas" data-bs-toggle="offcanvas" href="#offcanvasScrolling" role="button"
+                        aria-controls="offcanvasScrolling">
+                        <span class="navbar-toggler-icon"></span>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </button>
+
+                    <div class="header-content">
+                        <a class="navbar-brand" href="#">User Management</a>
+                        <button class="btn btn-primary btn-lg create-btn"><i class="fa-solid fa-plus"></i> Create
+                            User</button>
+                    </div>
+
+                    <div class="offcanvas offcanvas-start" tabindex="-1" aria-labelledby="offcanvasExampleLabel"
+                        data-bs-scroll="true" data-bs-backdrop="false" id="offcanvasScrolling">
+                        <div class="offcanvas-header">
+                            <div class="logo-white-wrapper">
+                                <img class="logo-white" src="./images/logo-white.svg" />
+                                <img class="logo-icon" src="./images/icons/logo-icon.svg" />
+                            </div>
+
+                            <button type="button" class="btn-close text-reset" id="closeBtn" data-bs-dismiss="offcanvas"
+                                aria-label="Close"><i class="fa-solid fa-angle-left"></i></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul>
+                                <li class="list-item">
+                                    <a href="#">
+                                        <img class="icon" src="./images/icons/i1.svg" />
+                                        <p>Dashboard</p>
+                                    </a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">
+                                        <img class="icon" src="./images/icons/i2.svg" />
+                                        <p>Role Management</p>
+                                    </a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">
+                                        <img class="icon" src="./images/icons/i3.svg" />
+                                        <p>User Management</p>
+                                    </a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">
+                                        <img class="icon" src="./images/icons/i4.svg" />
+                                        <p>Project Management</p>
+                                    </a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">
+                                        <div class="img-wrapper">
+                                            <img class="icon" src="./images/icons/i5.svg" />
+                                            <span class="num-count-circle">23</span>
+                                        </div>
+                                        <p>Notifications <span class="num-count">23</span></p>
+                                    </a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">
+                                        <img class="icon" src="./images/icons/i6.svg" />
+                                        <p>Report</p>
+                                    </a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">
+                                        <img class="icon i-7" src="./images/icons/i7.svg" />
+                                        <p>Settings</p>
+                                    </a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="#">
+                                        <img class="icon" src="./images/icons/i8.svg" />
+                                        <p>Logout</p>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="offcanvas-footer">
+                            <div class="dropdown user-info">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown">
+                                    <div class="d-flex align-items-center">
+                                        <div class="sname">
+                                            <h4>jd</h4>
+                                        </div>
+                                        <div class="name-wrapper">
+                                            <h6 class="username">John Doe</h6>
+                                            <p>johndoe@hurix.com</p>
+                                        </div>
+                                    </div>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="row">
+            <div class="col-lg">
+                <div class="content-wrapper" id="contentWrapper">
+                    <section class="filter-wrapper">
+                        <div class="container-fluid">
+                            <div class="filter-fields">
+                                <div class="searchbar">
+                                    <div class="input-group">
+                                        <input class="form-control form-control-lg me-2" type="search"
+                                            placeholder="Search for id, name & email" aria-label="Search">
+                                        <span class="input-group-text togglePassword" id="">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle btn-lg" type="button"
+                                        id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span>Role:</span> All
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                        <li><a class="dropdown-item" href="#">All</a></li>
+                                        <li><a class="dropdown-item" href="#">Admin</a></li>
+                                        <li><a class="dropdown-item" href="#">Super Admin</a></li>
+                                        <li><a class="dropdown-item" href="#">User</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button"
+                                        id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span>Role:</span> Status
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                        <li><a class="dropdown-item" href="#">All</a></li>
+                                        <li><a class="dropdown-item" href="#">Active</a></li>
+                                        <li><a class="dropdown-item" href="#">Inactive</a></li>
+                                    </ul>
+                                </div>
+                                <button class=" btn btn-primary btn-lg d-md-none create-btn"><i
+                                        class="fa-solid fa-plus"></i>
+                                    Create
+                                    User</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="datatable-wrapper p-0">
+                        <div class="container-fluid">
+                            <div class="user-table-wrapper">
+                                <div class="table-top-content">
+                                    <div class="total-users">
+                                        <p>Total User (10)</p>
+                                    </div>
+                                    <div class="top-btns">
+                                        <button class="btn btn-link">
+                                            <img src="./images/icons/delete.svg" />
+                                            Delete</button>
+                                        <button class="btn btn-link export-btn">
+                                            <img src="./images/icons/export.svg" />
+                                            Export</button>
+                                    </div>
+                                </div>
+                                <table id="usertable" class="table users-table display compact nowrap"
+                                    style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>User ID</th>
+                                            <th data-orderable="false">User Name</th>
+                                            <th data-orderable="false">Email Address</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th data-orderable="false">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td></td>
+                                            <td>HUR001</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname1">
+                                                        SP
+                                                    </div>
+                                                    Sandeep KP
+                                                </div>
+                                            </td>
+                                            <td>Sandeep.kp@hurix.com</td>
+                                            <td>Admin</td>
+                                            <td><button class="btn btn-sm active">Active</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR002</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname2">
+                                                        HB
+                                                    </div>
+                                                    Harish Baskaran
+                                                </div>
+                                            </td>
+                                            <td>harish.baskaran@hurix.com</td>
+                                            <td>Reviewer</td>
+                                            <td><button class="btn btn-sm active">Active</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR003</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname3">
+                                                        AK
+                                                    </div>
+                                                    Abhishek Kumar
+                                                </div>
+                                            </td>
+                                            <td>abhishek.kumar@hurix.com</td>
+                                            <td>Admin</td>
+                                            <td><button class="btn btn-sm inactive">Inactive</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR004</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname4">
+                                                        RS
+                                                    </div>
+                                                    Ravi S
+                                                </div>
+                                            </td>
+                                            <td>s.ravi@hurix.com</td>
+                                            <td>Reviewer</td>
+                                            <td><button class="btn btn-sm active">Active</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR005</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname5">
+                                                        CK
+                                                    </div>
+                                                    Chenna Kumar
+                                                </div>
+                                            </td>
+                                            <td>chenna.kumar@hurix.com</td>
+                                            <td>Editor</td>
+                                            <td><button class="btn btn-sm active">Active</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR006</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname6">
+                                                        CK
+                                                    </div>
+                                                    Chenna Kumar
+                                                </div>
+                                            </td>
+                                            <td>chenna.kumar@hurix.com</td>
+                                            <td>Editor</td>
+                                            <td><button class="btn btn-sm active">Active</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR007</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname7">
+                                                        KJ
+                                                    </div>
+                                                    Kishor Jadhav
+                                                </div>
+                                            </td>
+                                            <td>kishor.jadhav@hurix.com</td>
+                                            <td>Reviewer</td>
+                                            <td><button class="btn btn-sm inactive">Inactive</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR008</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname8">
+                                                        NV
+                                                    </div>
+                                                    Naveen Vengamalai
+                                                </div>
+                                            </td>
+                                            <td>naveen.v@hurix.com</td>
+                                            <td>Editor</td>
+                                            <td><button class="btn btn-sm active">Active</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR009</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname1">
+                                                        PV
+                                                    </div>
+                                                    Premnath V
+                                                </div>
+                                            </td>
+                                            <td>premnath.v@hurix.com</td>
+                                            <td>Admin</td>
+                                            <td><button class="btn btn-sm active">Active</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>HUR010</td>
+                                            <td class="name">
+                                                <div class="name-wrapper">
+                                                    <div class="sname sname2">
+                                                        RN
+                                                    </div>
+                                                    Rahul Nikhare
+                                                </div>
+                                            </td>
+                                            <td>Rahul.nikhare@hurix.com</td>
+                                            <td>Reviewer</td>
+                                            <td><button class="btn btn-sm active">Active</button></td>
+                                            <td class="action-btn-wrapper">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle action-btn"
+                                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/edit.svg" />
+                                                                Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                                <img src="./images/icons/delete-black.svg" />
+                                                                Delete</a></li>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <footer class="dashboard-footer">
+                    <div class="container-fluid">
+                        <div class="footer-content">
+                            <p class="mb-0">copyright &copy;2023 equalsense.ai. All rights reserved.</p>
+                            <ul>
+                                <li>
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">FAQ</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/select/2.0.2/js/dataTables.select.js"></script>
+    <script src="https://cdn.datatables.net/select/2.0.2/js/select.dataTables.js"></script>
+    <script src="./js/custom.js"></script>
+
+</body>
+
+</html>

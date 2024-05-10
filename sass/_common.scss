@@ -1,0 +1,33 @@
+body {
+    font-size: px-to-rem(16);
+    font-family: "Poppins", sans-serif;
+    color: $black;
+}
+
+section {
+    padding: px-to-rem(50) 0;
+}
+
+.bg-blue {
+    background: transparent url("../images/blue-bg.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.main-heading {
+    h1 {
+        font-size: px-to-rem(32);
+        color: $white;
+    }
+
+    p {
+        color: $grey;
+        margin-bottom: px-to-rem(30);
+    }
+}
+
+.btn-lg {
+    font-size: px-to-rem(16);
+    background-color: $primary;
+}

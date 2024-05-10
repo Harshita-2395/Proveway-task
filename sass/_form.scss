@@ -1,0 +1,104 @@
+form {
+    margin-bottom: px-to-rem(30);
+
+    .form-control {
+        padding: px-to-rem(12.5) px-to-rem(16);
+        font-size: px-to-rem(16);
+        border-radius: px-to-rem(2);
+        border: 1px solid $grey-4;
+
+        &:hover,
+        &:focus {
+            border: 1px solid $green;
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgba(65, 211, 94, 0.8);
+        }
+
+        &::placeholder {
+            color: $grey-3;
+        }
+    }
+
+    .input-group-text {
+        background-color: transparent;
+        border: 0;
+    }
+}
+
+.form-heading {
+    text-align: center;
+
+    h2 {
+        font-size: px-to-rem(26);
+        color: $grey-1;
+        font-weight: 700;
+    }
+
+    p {
+        color: $grey-2;
+        font-weight: 500;
+        opacity: 1;
+        margin-bottom: px-to-rem(40);
+    }
+}
+
+.signin-form-wrapper {
+    width: px-to-rem(444);
+    margin: 0 auto;
+
+    .signin-form {
+        padding: px-to-rem(30);
+        background-color: $white;
+        box-shadow: 0px 3px 30px $grey-1;
+        border-radius: px-to-rem(8);
+
+        .logo-wrapper {
+            margin-bottom: px-to-rem(30);
+            text-align: center;
+
+            img {
+                height: auto;
+                width: px-to-rem(172);
+            }
+        }
+
+        .input-group {
+            position: relative;
+
+            .input-group-text {
+                background-color: transparent;
+                border: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+        }
+
+        .forgot-link {
+            text-align: right;
+            margin-bottom: px-to-rem(40);
+
+            a {
+                font-size: px-to-rem(14);
+            }
+        }
+    }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    .signin-form-wrapper {
+        width: 100%;
+
+        .signin-form {
+            padding: px-to-rem(30) px-to-rem(30) px-to-rem(15);
+
+            .forgot-link {
+                margin-bottom: px-to-rem(20);
+            }
+        }
+    }
+}

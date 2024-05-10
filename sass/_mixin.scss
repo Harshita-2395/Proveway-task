@@ -1,0 +1,6 @@
+$base-size: 16;
+
+@function px-to-rem($target, $context: $base-size) {
+    $remSize: ($target / $context);
+    @return #{$remSize}rem;
+}

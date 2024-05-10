@@ -1,0 +1,99 @@
+.signin-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .copyright-wrapper {
+        text-align: center;
+
+        p {
+            color: $grey;
+            font-size: px-to-rem(12);
+            margin-bottom: px-to-rem(20);
+        }
+    }
+}
+
+.dashboard-footer {
+    background-color: #fff;
+    width: 100%;
+    z-index: 10;
+    position: sticky;
+    bottom: 0;
+    padding-top: px-to-rem(10);
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // position: sticky;
+        // bottom: 0;
+
+        p {
+            color: $grey-2;
+            font-size: px-to-rem(12);
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style-type: none;
+
+                &:nth-child(1) {
+                    a {
+                        margin-right: px-to-rem(7);
+                        padding-right: px-to-rem(5);
+                        // border-width: 1px;
+
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            content: "|";
+                            font-size: px-to-rem(12);
+                            right: -3px;
+                            top: 0;
+                            color: $grey-2;
+                        }
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $grey-2;
+                    font-size: px-to-rem(12);
+                }
+            }
+        }
+    }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    .user-table-wrapper {
+        .bottom {
+            display: block !important;
+
+            .pagination {
+                margin: px-to-rem(10) 0 !important;
+            }
+        }
+    }
+
+    .dashboard-footer {
+        padding: px-to-rem(10) 0;
+        .footer-content {
+            display: block;
+            text-align: center;
+
+            ul {
+                justify-content: center;
+            }
+        }
+    }
+}
